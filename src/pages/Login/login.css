@@ -1,0 +1,47 @@
+body{
+    margin: 0px;
+}
+.content{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: url(../../images/bg.jpg);
+    background-size: 100% 100%;
+}
+.login_block{
+    height: 280px;
+    width: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -250px;
+    margin-top: -200px;
+}
+.login_input{
+    margin:10px;
+}
+.boxer{
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px 0;
+    text-align: center;
+}
+.top_banner{
+    height: 60px;
+    background: #071a32;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    color: #fff;
+    line-height: 60px;
+    font-size: 18px;
+    z-index: 500;
+}
+.top_img{
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 80px;
+}
