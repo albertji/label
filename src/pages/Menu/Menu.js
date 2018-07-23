@@ -19,7 +19,7 @@ export default class Menu extends Component {
 
     render() {
         return(
-               111
+            <div>{this.props.location.query.acc}</div>
             )
     }
 }

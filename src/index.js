@@ -5,6 +5,10 @@ import {Provider} from 'react-redux';
 import store from './redux/store';
 import getRouter from './router/router';
 
+import { LocaleProvider } from 'antd';
+import zh_CN from 'antd/lib/locale-provider/zh_CN';
+import 'moment/locale/zh-cn';
+
 /*初始化*/
 renderWithHotReload(getRouter());
 
@@ -18,11 +22,13 @@ if (module.hot) {
 
 function renderWithHotReload(RootElement) {
     ReactDom.render(
-        <AppContainer>
-            <Provider store={store}>
-                {RootElement}
-            </Provider>
-        </AppContainer>,
+        <LocaleProvider locale={zh_CN}>
+            <AppContainer>
+                <Provider store={store}>
+                    {RootElement}
+                </Provider>
+            </AppContainer>
+        </LocaleProvider>,
         document.getElementById('app')
     )
 }

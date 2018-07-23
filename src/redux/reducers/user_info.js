@@ -1,15 +1,14 @@
-import { GET_ROUTER_LIST_SUCCESS} from '../actions/router_list';
-
+import {SET_USER_INFO} from '../actions/user_info';
 const initState = {
-    list: false
+    name: ""
 };
 
 export default function reducer(state=initState,action){
     switch(action.type){
-        case GET_ROUTER_LIST_SUCCESS:
+        case SET_USER_INFO:
             return {
                 ...state,
-                list: action.list
+                name: action.info.name
             };
         default:
             return state

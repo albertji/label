@@ -4,7 +4,7 @@ import {doLogin,setUserName,setPassword} from "../../redux/actions/login";
 import { Input, Icon, Button } from 'antd';
 import './login.css';
 import logosmall from '../../images/logosmall.png';
-//import login_info from "../../redux/reducers/login";
+
 
 
 class Login extends Component {
@@ -31,10 +31,12 @@ class Login extends Component {
                         <Input size="large" className="login_input"
                                placeholder="请输入用户名"
                                onChange={this.onChangeUserName}
+                               defaultValue={this.props.login_info.input_info.user}
                             prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }}/>}
                         />
                         <Input type="password" size="large" className="login_input"
                                placeholder="请输入密码"
+                               defaultValue={this.props.login_info.input_info.pwd}
                                onChange={this.onChangePassword}
                             prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                         />

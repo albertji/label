@@ -1,5 +1,6 @@
 import qs from 'qs'
 import history from '../../public/history';
+import {interfaces} from "../../public/interfaces"
 
 export const GET_LOGIN_ERROR = "login/GET_LOGIN_ERROR";
 export const GET_LOGIN_REQUEST = "login/GET_LOGIN_REQUEST";
@@ -43,9 +44,10 @@ export function doLogin(user,pwd) {
         var postParams = new URLSearchParams()
         postParams.set('name',params.name)
         postParams.set('password',params.password)
-        return fetch('/datasys/rbac/home/login/',{
+        return fetch(interfaces.url_login,{
             method: 'post',
-            body: postParams
+            body: postParams,
+            credentials: 'include'
         })
             .then((response => {
                 return response.json()
@@ -53,7 +55,7 @@ export function doLogin(user,pwd) {
             .then((json) => {
                     dispatch(getLoginSucc(json.error))
                     if(json.error == 0){
-                        history.push("/home");
+                        history.push("/");
                     }
                     else{
                         alert("用户名或密码错误")

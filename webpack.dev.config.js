@@ -51,7 +51,7 @@ module.exports = {
         host: '0.0.0.0',
         proxy:{
             '/datasys/*': {
-                target: 'http://10.19.19.23:8091'
+                target: 'http://10.19.19.23:8617'
             }
         }
     },
